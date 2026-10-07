@@ -1,4 +1,10 @@
+# OS / editor junk
+.DS_Store
+Thumbs.db
+
+# Local env values (keep secrets out of the repo)
 .env.local
-node_modules
-dist
-src/convex/_generated
+
+# Working artifacts
+*.tmp
+.vite/

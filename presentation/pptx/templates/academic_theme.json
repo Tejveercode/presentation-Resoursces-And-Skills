@@ -1,0 +1,19 @@
+{
+  "canvas": { "width_in": 13.333, "height_in": 7.5 },
+  "colors": {
+    "ink": "1F2A37",
+    "primary": "1F4E79",
+    "accent": "2E86AB",
+    "muted": "5B6770",
+    "bg": "FFFFFF",
+    "panel": "EEF3F8",
+    "line": "C9D6E3",
+    "ok": "2F7D4F",
+    "warn": "9A6A00",
+    "bad": "8B2E2E"
+  },
+  "fonts": { "heading": "Calibri", "body": "Calibri", "mono": "Consolas" },
+  "sizes_pt": { "title": 40, "h1": 28, "body": 16, "small": 12, "caption": 11 },
+  "margins_in": { "left": 0.6, "right": 0.6, "top": 0.5, "bottom": 0.45 },
+  "footer": { "show_slide_number": true, "show_project": true }
+}

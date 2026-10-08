@@ -151,6 +151,26 @@ Humanization/writing skills
 
 If multiple skills overlap, choose the most suitable one and avoid unnecessary duplication.
 
+### Installed component map (v1 toolbox)
+
+When executing this workflow, use exactly these installed components:
+
+- `research/project-audit/` — repository audit, Project Fact Sheet, Evidence Ledger
+  (statuses: IMPLEMENTED / PARTIALLY IMPLEMENTED / PLANNED / UNKNOWN / NOT FOUND)
+- `research/research-lookup/` — domain research and literature discovery
+- `research/citation-management/` — source verification states and bibliography generation
+- `presentation/presentation-skill/` — rubric-to-deck mapping and presentation architecture
+- `presentation/pptx/` — PRIMARY PPTX ENGINE (python-pptx): deck generation, academic
+  theme, build script, and LibreOffice render/visual-QA scripts
+- `visualization/scientific-schematics/` — native-shape technical diagrams derived from
+  audited evidence only
+- `presentation/humanizer/` — controlled final language pass (imported, MIT; technical
+  facts, implementation status, and citations must never change)
+
+Engine rules: one presentation engine only (the python-pptx engine above). Never
+activate an HTML deck engine. Never import AGPL material. See `SKILL_INDEX.md` for
+current component status.
+
 
 ==================================================
 3. REPOSITORY AUDIT

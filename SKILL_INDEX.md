@@ -7,7 +7,7 @@ installed yet.**
 
 | Category | Skill | Status |
 |---|---|---|
-| Orchestration | **Project Presentation Director** — coordinates the end-to-end flow: project analysis, research, presentation design, PPTX generation, and quality assurance. | Placeholder (SKILL.md pending) |
+| Orchestration | **Project Presentation Director** — orchestrates the full pipeline: repository audit, evidence-based fact extraction (IMPLEMENTED / PARTIALLY IMPLEMENTED / PLANNED / UNKNOWN), domain research, rubric mapping, editable PPTX generation, and visual/factual QA. | **Installed** (`SKILL.md` populated) |
 | Presentation | `presentation/presentation-skill/` | Empty placeholder — content pending |
 | Presentation | `presentation/pptx/` | Empty placeholder — content pending |
 | Research | `research/research-lookup/` | Empty placeholder — content pending |

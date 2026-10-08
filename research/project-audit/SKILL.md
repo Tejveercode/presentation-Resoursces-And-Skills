@@ -73,11 +73,19 @@ Produce `_audit/evidence_ledger.json` — an array of entries:
 }
 ```
 
-Required fields: `claim`, `status`, `evidence_source`, `evidence_location`,
-`confidence` (high|medium|low), `allowed_wording`, `restrictions` (may be "").
+Required fields: `claim`, `status`, `evidence_source`,`evidence_location`, `confidence` (high|medium|low), `allowed_wording`, `restrictions` (may be "").
 `status` must be exactly one of: `IMPLEMENTED`, `PARTIALLY IMPLEMENTED`,
 `PLANNED`, `UNKNOWN / NOT FOUND`. An `IMPLEMENTED` entry MUST have a non-empty
 `evidence_location`.
+
+Additional fields (recommended, schema-compatible):
+
+- `presentation_usage` (string) — where this claim may appear, e.g.
+  "Phase 2 architecture / Phase 3 prototype".
+- `last_verification` (ISO-8601 timestamp) — when the evidence was last
+  verified against the repository. Update whenever evidence is re-checked.
+- `intake_ref` (string) — id of the project intake manifest this entry was
+  audited against (ties ledger entries to the audited branch/commit).
 
 ## Validation
 

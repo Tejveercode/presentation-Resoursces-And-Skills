@@ -6,7 +6,8 @@
      "subtitle": "Academic project presentation — synthetic example deck",
      "meta": ["Course / Cluster: Engineering & Science", "Phase 1+2+3 skeleton"],
      "notes": "Replace every value here with audited, ledger-backed content."},
-    {"type": "section", "phase": "PHASE 1 — FOUNDATION", "title": "Background & Problem"},
+    {"type": "section", "phase": "PHASE 1 — FOUNDATION", "title": "Background & Problem",
+     "notes": "Section divider: announce Phase 1 (Foundation) and what the audience will learn in the next four slides."},
     {"type": "bullets", "title": "Problem Statement",
      "bullets": [
        {"text": "PROJECT FACT: what the audited repository actually addresses", "level": 0},
@@ -19,7 +20,8 @@
        {"text": "INTERPRETATION: suggests a gap around ...", "level": 0},
        {"text": "Do not manufacture novelty", "level": 0}
      ], "notes": "Only SOURCE VERIFIED entries may appear as [n]."},
-    {"type": "section", "phase": "PHASE 2 — TECHNICAL APPROACH", "title": "System Design"},
+    {"type": "section", "phase": "PHASE 2 — TECHNICAL APPROACH", "title": "System Design",
+     "notes": "Section divider: announce Phase 2 (Technical Approach) covering architecture, stack, and setup."},
     {"type": "diagram", "title": "System Architecture (as implemented)",
      "nodes": [
        {"id": "fe", "label": "Frontend", "x": 0.7, "y": 2.5, "w": 2.6, "h": 1.0, "kind": "rounded"},
@@ -36,7 +38,8 @@
               ["Tooling", "(from audit)", "Partially Implemented"]],
      "col_widths": [2.6, 5.2, 2.6],
      "notes": "Status column wording must match ledger statuses exactly."},
-    {"type": "section", "phase": "PHASE 3 — EXECUTION & RESULTS", "title": "Progress & Demo"},
+    {"type": "section", "phase": "PHASE 3 — EXECUTION & RESULTS", "title": "Progress & Demo",
+     "notes": "Section divider: announce Phase 3 (Execution & Results) covering progress, prototype, and the demo."},
     {"type": "bullets", "title": "Development Progress",
      "bullets": [
        {"text": "Implemented: ... (verified in code)", "level": 0},

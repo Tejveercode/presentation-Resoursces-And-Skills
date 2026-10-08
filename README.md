@@ -20,7 +20,11 @@ and never presented as more than the evidence supports.
 | Component | Path | Role | Status |
 |---|---|---|---|
 | project-presentation-director | `orchestration/project-presentation-director/` | Orchestrator, anti-hallucination policy | Installed |
-| project-audit | `research/project-audit/` | Fact Sheet + Evidence Ledger (4 evidence states) + ledger validator | Installed, tested |
+| project-audit | `research/project-audit/` | Project intake manifest (URL/local/archive → identity + branch/commit), Fact Sheet + Evidence Ledger (4 evidence states) + ledger validator | Installed, tested |
+| design-system | `presentation/design-system/` | Design Brief, user design preferences, semantic colors, anti-AI-slop rules | Installed |
+| QA: design/slop checker | `presentation/pptx/scripts/check_deck.py` | Deterministic structure/design/slop checks on a rendered PPTX | Installed, tested |
+| QA: canonical lifecycle | `presentation/pptx/scripts/deck_update.py` | Working-file → QA → atomic replace with rollback; one canonical deck, no duplicates | Installed, tested |
+| presentation state | `presentation/pptx/scripts/write_state.py` | presentation-state.json (slides, QA gates, identity, sha256) | Installed, tested |
 | research-lookup | `research/research-lookup/` | Domain research & literature discovery | Installed |
 | citation-management | `research/citation-management/` | Source verification states, claim→source links, bibliography builder (verified sources only) | Installed, tested |
 | presentation-skill | `presentation/presentation-skill/` | Rubric→deck mapping, claim-wording separation | Installed |
@@ -37,9 +41,17 @@ skill ZIPs kept for reference; **not** part of the toolbox.
 
 ```bash
 pip3 install python-pptx                                   # engine dependency
+# target-project intake (local dir / --url / --archive)
+python3 research/project-audit/scripts/project_intake.py <target-dir> \
+    -o _audit/<proj>/project_manifest.json
 python3 research/project-audit/scripts/validate_ledger.py _audit/<proj>/evidence_ledger.json
-python3 presentation/pptx/scripts/build_deck.py deck.json -o deck.pptx
-python3 presentation/pptx/scripts/render_deck.py deck.pptx -o render/   # needs LibreOffice
+# canonical build/update (QA-gated; never duplicates the deck)
+python3 presentation/pptx/scripts/deck_update.py build --spec deck.json \
+    --canonical <target>/presentation/project-presentation.pptx
+python3 presentation/pptx/scripts/write_state.py --deck <target>/presentation/project-presentation.pptx \
+    --manifest _audit/<proj>/project_manifest.json
+python3 presentation/pptx/scripts/render_deck.py <target>/presentation/project-presentation.pptx -o render/  # needs LibreOffice
+python3 presentation/pptx/scripts/check_deck.py <target>/presentation/project-presentation.pptx
 python3 presentation/pptx/tests/test_engine.py             # engine self-test
 ```
 

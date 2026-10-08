@@ -161,7 +161,14 @@ When executing this workflow, use exactly these installed components:
 - `research/citation-management/` — source verification states and bibliography generation
 - `presentation/presentation-skill/` — rubric-to-deck mapping and presentation architecture
 - `presentation/pptx/` — PRIMARY PPTX ENGINE (python-pptx): deck generation, academic
-  theme, build script, and LibreOffice render/visual-QA scripts
+  theme, build script, LibreOffice render/visual-QA scripts, design/structure/
+  anti-slop QA checker (`check_deck.py`), canonical-deck lifecycle manager
+  (`deck_update.py` create/update-with-rollback/verify), and state writer
+  (`write_state.py`)
+- `presentation/design-system/` — presentation design intelligence: Design Brief,
+  user design preferences (`design_prefs.json`), semantic color system,
+  typography/layout rules, UX cognitive path, and the anti-AI-slop prohibited
+  patterns
 - `visualization/scientific-schematics/` — native-shape technical diagrams derived from
   audited evidence only
 - `presentation/humanizer/` — controlled final language pass (imported, MIT; technical
@@ -170,6 +177,16 @@ When executing this workflow, use exactly these installed components:
 Engine rules: one presentation engine only (the python-pptx engine above). Never
 activate an HTML deck engine. Never import AGPL material. See `SKILL_INDEX.md` for
 current component status.
+
+### Canonical output & safe updates (binding)
+
+The generated presentation belongs to the TARGET PROJECT (never the toolbox):
+`presentation/project-presentation.pptx` with per-project assets/evidence/sources
+alongside (see `presentation/pptx/CANONICAL_WORKFLOW.md`). Exactly one canonical
+deck — update it via the working-file QA gate (`deck_update.py`), never create
+`final/final-final/v2` copies. QA gate order: project truth → research evidence →
+rubric coverage → design/UX → technical accuracy → visual QA (render loop when
+LibreOffice is available) → anti-slop → PPTX validation, all before replacement.
 
 
 ==================================================
